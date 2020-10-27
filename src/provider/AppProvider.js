@@ -1,16 +1,17 @@
 import React, { useReducer, useEffect } from 'react';
 import { AppContext } from '../hooks/appContext';
 import reducer, { initialState } from '../reducers/reducers';
-import { fetchPokemon } from '../services/apiRoutes';
+import { fetchPokemonFromApi } from '../services/apiRoutes';
 import { setPokemonList } from '../actions/reducerActions';
 
+
 const AppProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialSate);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    fetchPokemon(1)
-      .then(pokemon => dispatch(setPokemonList(pokemon)));
-  }, {});
+    fetchPokemonFromApi(1)
+      .then(pokemon => dispatch(setPokemonList(pokemon)))
+  }, []);
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
