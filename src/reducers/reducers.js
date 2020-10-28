@@ -1,6 +1,6 @@
-import { SET_POKEMON_LIST, SET_POKEMON_DETAILS} from '../actions/reducerActions'
+import { SET_POKEMON_LIST, SET_POKEMON_DETAILS } from '../actions/reducerActions'
 
-export const initialSate = {
+export const initialState = {
   pokemonList: [],
   pokemonDetails: {}
 }
