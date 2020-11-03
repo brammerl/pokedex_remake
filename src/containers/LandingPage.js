@@ -5,11 +5,10 @@ import SearchBar from '../components/Landing_Page/SearchBar'
 
 const LandingPage = () => {
   return (
-    <div>
-      
+    <>
+      <SearchBar/>
       <PokemonResults/>
-      <h1>hello</h1>
-    </div>
+    </>
   );
 };
 
